@@ -1,0 +1,10 @@
+services:
+
+  django:
+    container_name: django-chudopark
+    build: ./chudopark
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./chudopark:/usr/src/app/
+    ports:
+      - 8054:8000

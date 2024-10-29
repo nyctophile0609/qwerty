@@ -1,0 +1,8 @@
+qwerty/api/migrations/__pycache__/
+qwerty/api/__pycache__/
+qwerty/qwerty/__pycache__/
+qwerty/images/product/
+qwerty/images/psubsets/
+qwerty/images/gallery/
+*.sqlite3
+*.pyc
