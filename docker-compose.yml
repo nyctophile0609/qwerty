@@ -1,10 +1,21 @@
 services:
+  mysql:
+    container_name: mysql-qwerty
+    build:
+      context: ./MySQL
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: databasemysql
+    ports:
+      - "3306:3306"
 
   django:
-    container_name: django-chudopark
-    build: ./chudopark
+    container_name: django-qwerty
+    build: ./qwerty
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./chudopark:/usr/src/app/
+      - ./qwerty:/usr/src/app/
     ports:
       - 8054:8000
+    depends_on:
+      - mysql
